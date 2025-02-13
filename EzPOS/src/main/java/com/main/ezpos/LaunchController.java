@@ -9,6 +9,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 import org.w3c.dom.Text;
@@ -43,7 +44,12 @@ public class LaunchController {
         scene.setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent event) {
-                controller.EnterBarcode();
+                if (event.getCode() != KeyCode.ENTER) {
+                    controller.EnterBarcode();
+                }
+                else {
+                    System.out.println("Searching or entering!");
+                }
             }
         });
 
@@ -53,3 +59,5 @@ public class LaunchController {
         stage.show();
     }
 }
+
+//test
