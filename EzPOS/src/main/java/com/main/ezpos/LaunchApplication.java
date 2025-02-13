@@ -92,17 +92,8 @@ public class LaunchApplication extends Application {
         CreateDatabase();
 
         Parent root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
-        //DashboardController controller = new DashboardController();
         Scene scene = new Scene(root);
-
-//        scene.setOnKeyPressed(new EventHandler<KeyEvent>() {
-//            @Override
-//            public void handle(KeyEvent event) {
-//                controller.EnterBarcode();
-//            }
-//        });
         stage.setTitle("Hello!");
-
         stage.setScene(scene);
         stage.show();
     }

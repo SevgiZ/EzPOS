@@ -15,6 +15,7 @@ import javafx.stage.Stage;
 import org.w3c.dom.Text;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class LaunchController {
     private Stage stage;
@@ -49,6 +50,11 @@ public class LaunchController {
                 }
                 else {
                     System.out.println("Searching or entering!");
+                    try {
+                        controller.SearchBarcode();
+                    } catch (SQLException e) {
+                        throw new RuntimeException(e);
+                    }
                 }
             }
         });
